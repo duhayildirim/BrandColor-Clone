@@ -10,6 +10,7 @@
 | react-icons           
 | react-content-loader 
 | react-clipboard.js
+| react-lazyload
 
 ![Medium-UI-Clone](/public/UI.png)
 
