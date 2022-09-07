@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { getContrastYIQ } from '../Contrast'
 import MainContext from '../MainContext'
+import ClipboardButton from 'react-clipboard.js'
 
 function Brand({ brand }) {
-  const { selectedBrands, setSelectedBrands } = useContext(MainContext)
+  const { selectedBrands, setSelectedBrands, setCopied } = useContext(MainContext)
   const toggleSelected = () => {
     if (selectedBrands.includes(brand.slug)) {
       setSelectedBrands(selectedBrands.filter(slug => slug !== brand.slug))
@@ -11,13 +12,18 @@ function Brand({ brand }) {
       setSelectedBrands([...selectedBrands, brand.slug])
     }
   }
+  const colorSuccess = (color) => {
+    setCopied(color)
+  }
 
   return (
-    <div onClick={toggleSelected} className={`brand ${selectedBrands.includes(brand.slug) ? 'selected' : ''}`}>
-      <h5> {brand.title} </h5>
+    <div className={`brand ${selectedBrands.includes(brand.slug) ? 'selected' : ''}`}>
+      <h5 onClick={toggleSelected}> {brand.title} </h5>
       <div className="brand-colors">
         {brand.colors.map((color, key) => (
-          <span key={key} style={{ '--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}` }}>{color}</span>
+          <ClipboardButton data-clipboard-text={color} onSuccess={() => colorSuccess(color)} component="span" key={key} style={{ '--bgColor': `#${color}`, '--textColor': `${getContrastYIQ(color)}` }}>
+            {color}
+          </ClipboardButton>
         ))}
       </div>
     </div>

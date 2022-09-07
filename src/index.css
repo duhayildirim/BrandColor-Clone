@@ -169,17 +169,16 @@ a {
   cursor: pointer;
 }
 
-.content .brands .selected {
-
-}
+.content .brands .selected {}
 
 /* .content .brands .selected .brand-colors {
   background: rgb(160, 145, 145);
 } */
 
-.content .brands .selected .brand-colors span{
+.content .brands .selected .brand-colors span {
   flex: 1;
   text-indent: 0 !important;
+  cursor: pointer;
 }
 
 .content .brands .brand h5 {
@@ -202,4 +201,15 @@ a {
   color: var(--textColor);
   text-indent: -9999px;
   width: 70px;
+}
+
+.copied {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #999;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 16px;
 }
