@@ -139,6 +139,8 @@ a {
 
 .content .header .download {
   padding: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .content .header .download .selected {
@@ -150,13 +152,32 @@ a {
   justify-content: center;
 }
 
-.content .header .download button { 
+.content .header .download button {
   background: transparent;
   cursor: pointer;
-  margin-right: 7px;
 }
 
-.content .header svg { 
+.content .header .download .actions {
+  display: flex;
+}
+
+.content .header .download .actions a,
+button {
+  height: 30px;
+  width: 25px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.content .header .download .actions svg {
+  height: 13.5px;
+  width: 13.5px;
+}
+
+.content .header svg {
   display: block;
 }
 
