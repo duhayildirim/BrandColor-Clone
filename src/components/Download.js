@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import MainContext from '../MainContext'
 import { GrLink, GrDownload, GrClose } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
 
 function Download() {
   const { selectedBrands, setSelectedBrands, brands } = useContext(MainContext)
   const [downloadUrl, setDownloadUrl] = useState()
-  const getLink = () => {
-    prompt('Selected brands:', `${selectedBrands.join(',')}`)
-  }
+  // const getLink = () => {
+  //   prompt('Selected brands:', `${selectedBrands.join(',')}`)
+  // }
   const [changeCSS, setChangeCSS] = useState('css')
 
   useEffect(() => {
@@ -56,17 +57,17 @@ function Download() {
   return (
     <div className="download">
       <div className="actions">
-        <a download={`brands.${changeCSS}`} href={downloadUrl}>
-          <GrDownload />
-        </a>
         <select onChange={(e) => setChangeCSS(e.target.value)}>
           <option value="css">CSS</option>
           <option value="scss">SCSS</option>
           <option value="less">LESS</option>
         </select>
-        <button onClick={getLink}>
+        <a download={`brands.${changeCSS}`} href={downloadUrl}>
+          <GrDownload />
+        </a>
+        <Link to={`/collection/${selectedBrands.join(',')}`}>
           <GrLink />
-        </button>
+        </Link>
       </div>
       <div className="selected">
         <button onClick={() => setSelectedBrands([])}>

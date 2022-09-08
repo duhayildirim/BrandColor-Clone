@@ -137,6 +137,21 @@ a {
   position: relative;
 }
 
+.content .header .back-btn {
+  background: transparent;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  color: #999;
+}
+
+.content .header .back-btn svg {
+  display: block;
+  margin-right: 6px;
+}
+
 .content .header .download {
   padding: 25px;
   display: flex;
@@ -159,6 +174,16 @@ a {
 
 .content .header .download .actions {
   display: flex;
+}
+
+.content .header .download .actions select {
+  height: 30px;
+  padding: 0 8px;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  background: #eee;
+  border-radius: 4px;
 }
 
 .content .header .download .actions a,

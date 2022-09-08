@@ -12,11 +12,12 @@
 | react-clipboard.js
 | react-lazyload
 
-![Medium-UI-Clone](/public/UI.png)
+![BrandColor.net](/public/UI.png)
 
 #### Enough for Installation
 
 `$ npm install `
+or try with the --legacy-peer-deps option.
 
 
 
